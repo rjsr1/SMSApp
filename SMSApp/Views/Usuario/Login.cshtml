@@ -1,0 +1,36 @@
+﻿@model SMSApp.Models.Usuario
+
+@{ 
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@using (Html.BeginForm())
+{
+
+    <div style="align-content:center;position:center">
+        <div>
+            <fieldset style="position:center;text-align:center">
+                <legend style="color:red">Login</legend>
+                <div class="editor-label">
+                    @Html.Label("Usuário")
+                </div>
+                <div class="editor-field">
+                    @Html.TextBoxFor(u => u.Nome)
+                    @Html.ValidationMessageFor(u => u.Nome)
+                </div>
+                <div class="editor-label">
+                    @Html.Label("Senha")
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(u => u.Senha)
+                    @Html.ValidationMessageFor(u => u.Senha)
+                </div>
+                <br />
+
+                <input type="submit" value="Log In" />
+            </fieldset>
+        </div>
+    </div>
+}

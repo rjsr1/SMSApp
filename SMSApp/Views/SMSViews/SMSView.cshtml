@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "SMS";
+}
+<div style="text-align:center;margin:15px">
+<textarea readonly="readonly" rows="6" cols="30" wrap="soft" >
+    @ViewBag.Texto
+</textarea>
+    <div>
+        <button type="button" style="margin:15px">
+            @Html.ActionLink("Enviar", "Enviar", "Usuario", new { Texto = ViewBag.Texto, HoraEnvio = DateTime.Now.ToString() }, null)
+        </button>
+    </div>
+    <div>
+        Selecione o Mês : @Html.DropDownList("mes",new SelectList(ViewBag.Meses))
+        Selecione o Ano :@Html.DropDownList("ano", new SelectList(ViewBag.Anos))
+    </div>
+</div>
